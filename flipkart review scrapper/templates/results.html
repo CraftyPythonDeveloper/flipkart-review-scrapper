@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Review Scrapper</title>
+  <link rel="stylesheet" href="./static/rstyle.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<table>
+       <h1 style="color:white"><center>Reviews</h1>
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Product Price</th>
+          <th>Customer Name</th>
+          <th>Customer Ratings</th>
+          <th>Comment Heading</th>
+          <th>Comment</th>
+          <th>Product url</th>
+        </tr>
+      <thead>
+      <tbody>
+  {% for review in f_result %}
+  <tr>
+                <td>{{ review['Product Name'] }}</td>
+                <td>{{ review['Product Price'] }}</td>
+                <td>{{ review['Customer Name'] }}</td>
+                <td>{{ review['Rating'] }}</td>
+                <td>{{ review['Comment_head'] }}</td>
+                <td>{{ review['Comment'] }}</td>
+                <td><a target="_blank" rel="noopener noreferrer" href="{{ review['Product url'] }}">Click Here</a></td>
+  </tr>
+  {% endfor %}
+      </tbody>
+    </table>
+<!-- partial -->
+
+</body>
+</html>
